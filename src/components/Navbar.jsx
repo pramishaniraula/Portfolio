@@ -12,7 +12,7 @@ function Navbar() {
       <div className="mx-auto flex max-w-6xl items-center justify-between py-4">
 
         {/* Logo */}
-        <a href="www.pramishaniraula.com.np" className="cursor-pointer">
+        <a href="/" className="cursor-pointer">
           <img
             src={pramishaLogo} // import your logo at the top: 
             alt="Pramisha Logo"
