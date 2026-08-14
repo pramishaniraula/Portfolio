@@ -51,7 +51,7 @@ function Hero() {
           <img
             src={pramisha}
             alt="Pramisha Niraula"
-            className="w-72 rounded-3xl border border-[#3b2d34] shadow-lg shadow-[#f7b2d9]/20 transition hover:scale-105"
+            className="w-70 h-110 rounded-3xl border border-[#3b2d34] shadow-lg shadow-[#f7b2d9]/20 transition hover:scale-105"
           />
         </div>
       </div>

@@ -1,3 +1,4 @@
+import pramishaLogo from "../assets/logo.png";
 function Navbar() {
   const navLinks = [
     { name: "Home", link: "#home" },
@@ -11,11 +12,12 @@ function Navbar() {
       <div className="mx-auto flex max-w-6xl items-center justify-between py-4">
 
         {/* Logo */}
-        <a
-          href="#home"
-          className="cursor-pointer text-xl font-bold text-white"
-        >
-          Pramisha<span className="text-[#c9a6b2]">Niraula</span>
+        <a href="www.pramishaniraula.com.np" className="cursor-pointer">
+          <img
+            src={pramishaLogo} // import your logo at the top: 
+            alt="Pramisha Logo"
+            className="w-30 h-10 object-contain"
+          />
         </a>
 
         <div className="flex items-center gap-6">

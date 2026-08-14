@@ -41,7 +41,7 @@ function Contact() {
         <div>
           <h2 className="text-3xl font-bold mb-6 text-[#f7b2d9]">Contact Me</h2>
           <p className="text-gray-300 mb-8">
-            I’d love to connect, collaborate, or just chat about creative ideas.
+            I’d love to connect, collaborate, or learn about creative ideas.
           </p>
 
           <div className="space-y-4">
