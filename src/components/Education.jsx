@@ -16,37 +16,50 @@ function Education() {
     },
     {
       icon: <FaUniversity />,
-      level: "Bachelor of Computer System and Information Technology (BCSIT)",
+      level:
+        "Bachelor of Computer System and Information Technology (BCSIT)",
       institution: "Apex College",
       status: "2024 - Present",
     },
   ];
 
   return (
-      <div className="mx-auto max-w-6xl">
-        <div className="mt-8 space-y-4">
-          {education.map((item) => (
+    <div className="mx-auto max-w-6xl">
+      <div className="mt-8 space-y-4">
+        {education.map((item) => (
+          <div
+            key={item.institution}
+            className="flex gap-6 rounded-2xl border border-[#A8B29B]/70 bg-[#F9F6F0] p-6
+                       transition duration-300
+                       hover:-translate-y-1 hover:border-[#66735A]
+                       hover:shadow-lg hover:shadow-[#66735A]/10"
+          >
+            {/* Icon */}
             <div
-              key={item.institution}
-              className="flex gap-6 rounded-2xl border border-[#3b2d34] bg-[#241b21] p-6 
-                        transition transform hover:-translate-y-2 hover:scale-[1.02] 
-                        hover:border-[#f7b2d9] hover:shadow-lg hover:shadow-[#f7b2d9]/30"
+              className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl
+                         bg-[#E4E8DD] text-[#66735A]"
             >
-              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[#2a2026] text-[#f7b2d9]">
-                {item.icon}
-              </div>
-
-              <div>
-                <p className="text-sm uppercase tracking-wider text-[#c9a6b2]">
-                  {item.status}
-                </p>
-                <h3 className="mt-2 text-xl font-medium text-white">{item.level}</h3>
-                <p className="mt-2 text-gray-400">{item.institution}</p>
-              </div>
+              {item.icon}
             </div>
-          ))}
-        </div>
+
+            {/* Education Details */}
+            <div>
+              <p className="text-sm uppercase tracking-wider text-[#C98B6B]">
+                {item.status}
+              </p>
+
+              <h3 className="mt-2 text-xl font-medium text-[#2F3328]">
+                {item.level}
+              </h3>
+
+              <p className="mt-2 text-[#6A6E64]">
+                {item.institution}
+              </p>
+            </div>
+          </div>
+        ))}
       </div>
+    </div>
   );
 }
 

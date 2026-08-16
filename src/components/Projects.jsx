@@ -26,53 +26,74 @@ function Projects() {
     <section id="projects" className="section">
       <div className="mx-auto max-w-6xl">
         <hr className="glow-hr" />
-        <h2 className="text-3xl font-bold mb-4 text-[#f7b2d9]">My Projects</h2>
-        <p className="mt-4 leading-8 text-gray-400">
+
+        <h2 className="mb-4 text-3xl font-bold text-[#66735A]">
+          My Projects
+        </h2>
+
+        <p className="mt-4 leading-8 text-[#5F6258]">
           I'm using projects to practice what I learn and understand how
           different technologies work together.
         </p>
 
         <div className="mt-8 grid gap-6 md:grid-cols-2">
           {projects.map((project) => (
-            <div key={project.title}
-              className="rounded-2xl border border-[#3b2d34] bg-[#241b21] p-5 transition hover:-translate-y-1 hover:border-[#f7b2d9] hover:shadow-[0_0_15px_#f7b2d9]"
+            <div
+              key={project.title}
+              className="rounded-2xl border border-[#A8B29B]/70 bg-[#F9F6F0] p-6 transition duration-300 hover:-translate-y-1 hover:border-[#66735A] hover:shadow-lg hover:shadow-[#66735A]/10"
             >
-              <h3 className="text-xl font-bold text-[#f7b2d9] mb-2">{project.title}</h3>
-              <p className="text-sm text-gray-400 line-clamp-2">{project.description}</p>
+              {/* Project heading */}
+              <div className="flex items-start justify-between gap-4">
+                <h3 className="mb-2 text-xl font-bold text-[#2F3328]">
+                  {project.title}
+                </h3>
 
-              <div className="mt-4 flex flex-wrap gap-2">
+                <span className="shrink-0 rounded-full bg-[#E4E8DD] px-3 py-1 text-xs font-medium text-[#66735A]">
+                  {project.type}
+                </span>
+              </div>
+
+              {/* Description */}
+              <p className="line-clamp-2 text-sm leading-6 text-[#5F6258]">
+                {project.description}
+              </p>
+
+              {/* Technologies */}
+              <div className="mt-5 flex flex-wrap gap-2">
                 {project.technologies.map((tech) => (
                   <span
                     key={tech}
-                    className="rounded-full border border-[#4d3a43] px-3 py-1 text-xs text-gray-300"
+                    className="rounded-full border border-[#A8B29B] px-3 py-1 text-xs text-[#66735A]"
                   >
                     {tech}
                   </span>
                 ))}
               </div>
 
-              <div className="mt-5 flex gap-3">
+              {/* Buttons */}
+              <div className="mt-6 flex gap-3">
                 <a
                   href={project.demo}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-md bg-[#f7b2d9] px-4 py-2 text-sm font-medium text-[#1a1216] hover:bg-[#ff9dcf] transition"
+                  className="cursor-pointer rounded-md bg-[#66735A] px-4 py-2 text-sm font-medium text-[#F4F1EA] transition hover:bg-[#59644E]"
                 >
                   View Live
                 </a>
+
                 <a
                   href={project.github}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-md border border-[#f7b2d9] px-4 py-2 text-sm font-medium text-[#f7b2d9] hover:bg-[#2a2026] transition"
+                  className="inline-flex cursor-pointer items-center gap-2 rounded-md border border-[#A8B29B] px-4 py-2 text-sm font-medium text-[#2F3328] transition hover:border-[#C98B6B] hover:text-[#C98B6B]"
                 >
+                  <FaGithub size={14} />
                   Github Repo
                 </a>
               </div>
             </div>
           ))}
         </div>
-
       </div>
     </section>
   );

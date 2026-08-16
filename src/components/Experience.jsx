@@ -4,7 +4,7 @@ function Experience() {
   const experiences = [
     {
       icon: <FaLaptopCode />,
-      title: "Learning by Doing",
+      title: "Learning by Practice",
       text: "Currently practicing programming concepts and applying them in small projects.",
     },
     {
@@ -19,13 +19,25 @@ function Experience() {
       {experiences.map((exp, index) => (
         <div
           key={index}
-          className="flex flex-col items-center rounded-2xl border border-[#3b2d34] bg-[#241b21] p-6 
-                     transition hover:-translate-y-2 hover:scale-[1.03] 
-                     hover:border-[#f7b2d9] hover:shadow-lg hover:shadow-[#f7b2d9]/30"
+          className="flex flex-col items-center rounded-2xl border border-[#A8B29B]/70 bg-[#F9F6F0] p-6
+                     transition duration-300
+                     hover:-translate-y-1 hover:border-[#66735A]
+                     hover:shadow-lg hover:shadow-[#66735A]/10"
         >
-          <div className="text-3xl text-[#f7b2d9] mb-3">{exp.icon}</div>
-          <h3 className="text-lg font-medium text-white text-center">{exp.title}</h3>
-          <p className="mt-2 text-sm text-gray-400 text-center">{exp.text}</p>
+          {/* Icon */}
+          <div className="mb-3 text-3xl text-[#66735A]">
+            {exp.icon}
+          </div>
+
+          {/* Title */}
+          <h3 className="text-center text-lg font-medium text-[#2F3328]">
+            {exp.title}
+          </h3>
+
+          {/* Description */}
+          <p className="mt-2 text-center text-sm leading-6 text-[#6A6E64]">
+            {exp.text}
+          </p>
         </div>
       ))}
     </div>

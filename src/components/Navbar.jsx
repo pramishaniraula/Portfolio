@@ -1,12 +1,10 @@
 import React, { useState } from "react";
-import {
-FaBars,
-FaTimes
-} from "react-icons/fa";
+import { FaBars, FaTimes } from "react-icons/fa";
 import pramishaLogo from "../assets/logo.png";
-import { NavLink, Link } from "react-router-dom";
+
 function Navbar() {
-  const [menuOpen,setMenuOpen] =useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+
   const navLinks = [
     { name: "Home", link: "#home" },
     { name: "About", link: "#about" },
@@ -15,56 +13,64 @@ function Navbar() {
   ];
 
   return (
-    <nav className="sticky top-0 z-50 border-b border-[#3b2d34] bg-[#1a151d]">
-      <div className="hidden md:flex mx-auto max-w-6xl items-center justify-between py-4 sm:px-6 lg:px-8">
+    <nav className="sticky top-0 z-50 border-b border-[#A8B29B]/50 bg-[#F4F1EA]/95 backdrop-blur-sm">
+
+      {/* Desktop Navbar */}
+      <div className="mx-auto flex max-w-6xl items-center justify-between py-4">
 
         {/* Logo */}
-        <a href="/" className="cursor-pointer">
+        <a href="#home" className="cursor-pointer">
           <img
             src={pramishaLogo}
             alt="Pramisha Logo"
-            className="w-30 h-10 object-contain"
+            className="h-10 w-20 object-contain"
           />
         </a>
 
-        <div className="flex items-center gap-6">
+        {/* Desktop Links */}
+        <div className="hidden items-center gap-7 md:flex">
           {navLinks.map((item) => (
             <a
               key={item.name}
               href={item.link}
-              className="cursor-pointer text-sm text-gray-300 transition hover:text-[#c9a6b2]"
+              className="group relative cursor-pointer py-1 text-sm font-medium text-[#2F3328] transition-colors hover:text-[#C98B6B]"
             >
               {item.name}
+
+              <span className="absolute bottom-0 left-0 h-[1.5px] w-0 bg-[#C98B6B] transition-all duration-300 group-hover:w-full"></span>
             </a>
           ))}
         </div>
-        <button className="md:hidden ml-auto text-2xl text-slate-700 p-1" 
-          onClick={()=> setMenuOpen(!menuOpen)}
+
+        {/* Mobile Menu Button */}
+        <button
+          className="ml-auto cursor-pointer p-1 text-xl text-[#2F3328] md:hidden"
+          onClick={() => setMenuOpen(!menuOpen)}
+          aria-label="Toggle menu"
         >
-          {menuOpen? <FaTimes/> : <FaBars/>}
+          {menuOpen ? <FaTimes /> : <FaBars />}
         </button>
       </div>
-      {menuOpen && (
-        <div className="md:hidden absolute top-14 left-0 w-full bg-white shadow-lg p-4 space-y-1"> 
-          <a href="/" className="cursor-pointer">
-          <img
-            src={pramishaLogo}
-            alt="Pramisha Logo"
-            className="w-30 h-10 object-contain"
-          />
-        </a>
 
-        <div className="flex items-center gap-3 px-4 py-2.5">
-          {navLinks.map((item) => (
-            <a
-              key={item.name}
-              href={item.link}
-              className="cursor-pointer text-sm text-gray-300 transition hover:text-[#c9a6b2]"
-            >
-              {item.name}
-            </a>
-          ))}
-        </div>
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="absolute left-0 top-full w-full border-b border-[#A8B29B]/50 bg-[#F4F1EA] px-6 py-5 shadow-sm md:hidden">
+
+          <div className="flex flex-col gap-4">
+            {navLinks.map((item) => (
+              <a
+                key={item.name}
+                href={item.link}
+                onClick={() => setMenuOpen(false)}
+                className="group relative w-fit cursor-pointer py-1 text-sm font-medium text-[#2F3328] transition-colors hover:text-[#C98B6B]"
+              >
+                {item.name}
+
+                <span className="absolute bottom-0 left-0 h-[1.5px] w-0 bg-[#C98B6B] transition-all duration-300 group-hover:w-full"></span>
+              </a>
+            ))}
+          </div>
+
         </div>
       )}
     </nav>

@@ -16,27 +16,42 @@ function Section() {
 
   return (
     <section id="about" className="section">
-    <div className="max-w-6xl mx-auto">
-      <hr className="glow-hr" />
+      <div className="mx-auto max-w-6xl">
+        <hr className="glow-hr" />
 
-      <div className="flex gap-8 mb-10 text-lg font-medium text-white">
-        {tabs.map((tab) => (
-          <button
-            key={tab.key}
-            onClick={() => setActiveTab(tab.key)}
-            className={`cursor-pointer ${
-              activeTab === tab.key ? "text-[#f7b2d9] border-b-2 border-[#f7b2d9]" : ""
-            }`}
-          >
-            {tab.label}
-          </button>
-        ))}
-      </div>
+        <div className="mb-10 flex flex-wrap gap-x-8 gap-y-4 text-lg font-medium">
+          {tabs.map((tab) => {
+            const isActive = activeTab === tab.key;
 
-      <div>
-        {tabs.find((tab) => tab.key === activeTab)?.component}
+            return (
+              <button
+                key={tab.key}
+                onClick={() => setActiveTab(tab.key)}
+                className={`group relative cursor-pointer py-1 transition-colors duration-200 ${
+                  isActive
+                    ? "text-[#C98B6B]"
+                    : "text-[#2F3328] hover:text-[#C98B6B]"
+                }`}
+              >
+                {tab.label}
+
+                {/* Animated underline */}
+                <span
+                  className={`absolute bottom-0 left-0 h-[1.5px] bg-[#C98B6B] transition-all duration-300 ${
+                    isActive
+                      ? "w-full"
+                      : "w-0 group-hover:w-full"
+                  }`}
+                />
+              </button>
+            );
+          })}
+        </div>
+
+        <div>
+          {tabs.find((tab) => tab.key === activeTab)?.component}
+        </div>
       </div>
-    </div>
     </section>
   );
 }

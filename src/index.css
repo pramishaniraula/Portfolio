@@ -9,8 +9,8 @@ html {
 body {
   margin: 0;
   min-width: 320px;
-  background: #1a151d;
-  color: #ffffff;
+  background: #F4F1EA;
+  color: #2F3328;
   font-family: "Poppins", sans-serif;
 }
 
@@ -23,9 +23,8 @@ body {
 }
 
 .glow-hr {
-  border: 1px solid #f7b2d9;   
-  box-shadow: 0 0 12px #f7b2d9;    
-  margin: 2.5rem 0;                
+  border: 1px solid #A8B29B;
+  margin: 2.5rem 0;
 }
 
 .section {
@@ -33,4 +32,3 @@ body {
   padding: 20px;
   margin-top: 10px;
 }
-
