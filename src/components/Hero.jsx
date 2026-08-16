@@ -7,7 +7,7 @@ function Hero() {
       <div className="mx-auto grid max-w-6xl items-center mt-4 gap-12 md:grid-cols-2">
         {/* Text */}
         <div>
-          <p className="mb-4 text-lg font-semibold text-[#f7b2d9]">
+          <p className="mb-4 text-lg text-[#f7b2d9]">
             Computer Science Student
           </p>
 
@@ -18,7 +18,7 @@ function Hero() {
             </span>
           </h1>
 
-          <p className="mt-6 max-w-xl leading-8 text-gray-300">
+          <p className="mt-6 max-w-xl leading-8 text-gray-300 text-justify">
             I'm a 4th-semester Computer Science student and an aspiring
             developer currently learning web development and programming.
           </p>

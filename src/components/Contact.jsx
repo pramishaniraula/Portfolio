@@ -46,10 +46,10 @@ function Contact() {
 
           <div className="space-y-4">
             <p className="flex items-center gap-3 text-[#f7b2d9]">
-              ✉️ <span className="text-gray-200">pramisha.niraula24@apexcollege.edu.np</span>
+              ✉️ <span className="text-gray-200">pramishaniraula93@gmail.com</span>
             </p>
             <p className="flex items-center gap-3 text-[#f7b2d9]">
-              📞 <span className="text-gray-200">+977 9861007396</span>
+              📞 <span className="text-gray-200">+977 9819773397</span>
             </p>
           </div>
 
