@@ -4,7 +4,7 @@ import pramisha from "../assets/pramisha.png";
 function Hero() {
   return (
     <section id="home" className="section">
-      <div className="mx-auto grid max-w-6xl items-center mt-4 gap-12 md:grid-cols-2">
+      <div className="mx-auto grid max-w-6xl items-center mt-2 gap-12 md:grid-cols-2">
         
         {/* Text */}
         <div>
@@ -21,7 +21,8 @@ function Hero() {
 
           <p className="mt-6 max-w-xl leading-8 text-[#5F6258] text-justify">
             I'm a 4th-semester Computer Science student and an aspiring
-            developer currently learning web development and programming.
+            web developer currently learning React, JavaScript, HTML, CSS,
+            Git, and SQL.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-4">
@@ -51,8 +52,8 @@ function Hero() {
         <div className="flex justify-center md:justify-end">
           <img
             src={pramisha}
-            alt="Pramisha Niraula"
-            className="h-100 w-100 rounded-full border-4 border-[#A8B29B] object-cover shadow-lg shadow-[#66735A]/20 transition duration-300 hover:scale-105"
+            alt="Pramisha Niraula, Computer Science student and aspiring web developer"
+            className="h-105 w-105 rounded-full border-4 border-[#8a977e] object-cover shadow-lg shadow-[#839275] transition duration-300 hover:scale-105"
           />
         </div>
 
